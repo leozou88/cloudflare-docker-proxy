@@ -89,7 +89,7 @@
         <p>为了加速 Docker 镜像拉取，你可以使用以下命令设置 registry mirror:</p>
         <pre><code id="registry-config">sudo tee /etc/docker/daemon.json &lt;&lt;EOF
 {
-    "registry-mirrors": ["https://{{host}}"]
+    "registry-mirrors": ["https://docker.l-eo.com"]
 }
 EOF
 # 配置完后需要重启 Docker 服务
@@ -98,25 +98,25 @@ sudo systemctl restart docker
         <p>使用该代理从不同的镜像仓库拉取镜像，请参考以下命令：</p>
         <pre><code id="commands">
 # docker pull nginx:latest
-docker pull docker.{{host}}/library/nginx:latest  # 拉取 Docker 官方镜像
+docker pull docker.l-eo.com/library/nginx:latest  # 拉取 Docker 官方镜像
 
 # docker pull quay.io/coreos/etcd:latest
-docker pull quay.{{host}}/coreos/etcd:latest  # 拉取 Quay 镜像
+docker pull quay.l-eo.com/coreos/etcd:latest  # 拉取 Quay 镜像
 
 # docker pull gcr.io/google-containers/busybox:latest
-docker pull gcr.{{host}}/google-containers/busybox:latest  # 拉取 GCR 镜像
+docker pull gcr.l-eo.com/google-containers/busybox:latest  # 拉取 GCR 镜像
 
 # docker pull k8s.gcr.io/pause:latest
-docker pull k8s-gcr.{{host}}/pause:latest  # 拉取 k8s.gcr.io 镜像
+docker pull k8s-gcr.l-eo.com/pause:latest  # 拉取 k8s.gcr.io 镜像
 
 # docker pull registry.k8s.io/pause:latest
-docker pull k8s.{{host}}/pause:latest  # 拉取 registry.k8s.io 镜像
+docker pull k8s.l-eo.com/pause:latest  # 拉取 registry.k8s.io 镜像
 
 # docker pull ghcr.io/github/super-linter:latest
-docker pull ghcr.{{host}}/github/super-linter:latest  # 拉取 GitHub 容器镜像
+docker pull ghcr.l-eo.com/github/super-linter:latest  # 拉取 GitHub 容器镜像
 
 # docker pull docker.cloudsmith.io/public/repo/image:latest
-docker pull cloudsmith.{{host}}/public/repo/image:latest  # 拉取 Cloudsmith 镜像
+docker pull cloudsmith.l-eo.com/public/repo/image:latest  # 拉取 Cloudsmith 镜像
 </code></pre>
         <p>为了避免 Worker 用量耗尽，你可以手动 pull 镜像然后 re-tag 之后 push 至本地镜像仓库。</p>
     </div>
