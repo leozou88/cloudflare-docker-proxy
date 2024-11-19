@@ -28,7 +28,7 @@ const routes = {
   ["ecr.l-eo.com"]: "https://public.ecr.aws",
 
   // staging
-  ["docker-staging." + CUSTOM_DOMAIN]: dockerHub,
+  ["docker-staging.l-eo.com"]: dockerHub,
 };
 
 function routeByHosts(host) {
